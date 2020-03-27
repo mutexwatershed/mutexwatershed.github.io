@@ -1,0 +1,6 @@
+@InProceedings{Wolf_2020_Mutex,
+  title = {The {{Mutex Watershed}} and Its {{Objective}}: {{Efficient}}, {{Parameter}}-{{Free Image Partitioning}}},
+  author = {Wolf, Steffen and Bailoni, Alberto and Pape, Constantin and Rahaman, Nasim and Kreshuk, Anna and K\"othe, Ullrich and Hamprecht, Fred A.},
+  journal={{IEEE} Transactions on Pattern Analysis and Machine Intelligence},
+  year={2020},
+}

@@ -1,138 +1,375 @@
-<!doctype html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TransitionalW3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Midnight by mattgraham</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 
-  </head>
-  <body>
-    <div id="header">
-      <div class="wrapper">
-        <a href="https://github.com/mattgraham/midnight" class="btn">View On GitHub</a>
-        <ul class="nav">
-          <li class="download-title">Downloads</li>
-          <li class="downloads"><a href="https://github.com/mattgraham/midnight/zipball/master" class="btn">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/mattgraham/midnight/tarball/master" class="btn">TAR</a></li>
-        </ul>
-      </div>
-    </div><!-- end header -->
+<meta content="utf-8" http-equiv="encoding">
+<link rel="icon" href="favicon.ico" type="image/png"/>
+<!-- ======================================================================= -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 
-    <div class="wrapper">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
 
-      <section>
-        <div id="title">
-          <h1>GitHub Pages Midnight Theme</h1>
-          <h5>Design for the web to succeed and you too will succeed.</h5>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/mattgraham">mattgraham</a></span>
-          <span class="credits right">This project is released under the terms of the MIT license.</span>
-        </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script type="text/javascript">
+    google.load("jquery", "1.3.2");
+</script>
 
-        <p>The GitHub automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the gh-pages branch for your site files.</p>
+<link href="css/styles.css">
 
-        <h3></h3>
-        <p><img src="https://scontent-iad3-1.cdninstagram.com/hphotos-xaf1/t51.2885-15/e35/11261377_516833338492357_1858954166_n.jpg" alt="New Haven South Beach by Matt Graham"></p>
+<title>Mutex Watershed</title>
+<meta property="og:title" content="The Mutex Watershed and its Objective"/>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<body>
 
-        <p>As we do, we're open sourcing the front end code for the new GitHub pages themes. This is just one of the many beautiful themes that can used to dynamically turn your static repo into a beautiful marketing site.  </p>
+ <main role="main" class="container">
 
-        <h2>Designer Templates</h2>
-        <p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your page content will be preserved if it remained in markdown format.</p>
-
-        <ul>
-          <li>Hack by <a href="https://github.com/bleikamp">Ben Bleikamp</a> </li>
-          <li>Merlot by <a href="https://github.com/cameronmcefee">Cameron McEfee</a></li>
-          <li>Slate by <a href="https://github.com/jsncostello">Jason Costello</a></li>
-          <li>Time Machine by <a href="https://github.com/jonrohan">Jon Rohan</a></li>
-          <li>Leap Day by <a href="https://github.com/mattgraham">Matt Graham</a></li>
-          <li>Midnight by <a href="https://github.com/mattgraham">Matt Graham</a></li>
-          <li>Minimal by <a href="https://github.com/orderedlist">Steve Smith</a></li>
-          <li>Modernist by <a href="https://github.com/orderedlist">Steve Smith</a></li>
-        </ul>
-
-        <p>For more info on GitHub Pages, check out <a href="http://pages.github.com/">pages.github.com</a>. For help, check the <a href="http://help.github.com/pages">GitHub Pages documentation</a>.</p>
-
- <h2>What will code look like?</h2>
-
-<p>Your code should be beautiful, or at least that's what the designers think. </p>
-
-<div class="highlight">
-<pre><span class="nb">require</span> <span class="s1">'adapter/memory'</span>
-<span class="nb">require</span> <span class="s1">'toystore'</span>
-
-<span class="k">class</span> <span class="nc">User</span>
-  <span class="kp">include</span> <span class="no">Toy</span><span class="o">::</span><span class="no">Store</span>
-  <span class="n">adapter</span> <span class="ss">:memory</span><span class="p">,</span> <span class="p">{}</span>
-
-  <span class="n">attribute</span> <span class="ss">:name</span><span class="p">,</span> <span class="nb">String</span>
-<span class="k">end</span>
-</pre>
-</div>
-
-
-<p>So, this is what HTML Code looks like</p>
-
-<div class="highlight">
-<pre><span class="nt">&lt;html&gt;</span>
-   <span class="nt">&lt;body&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"header"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;nav&gt;</span>
-             <span class="nt">&lt;li&gt;</span>Home<span class="nt">&lt;/li&gt;</span>
-             <span class="nt">&lt;li&gt;</span>About Us<span class="nt">&lt;/li&gt;</span>
-             <span class="nt">&lt;li&gt;</span>Contact<span class="nt">&lt;/li&gt;</span>
-          <span class="nt">&lt;/nav&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre>
-</div>
-
-
-<p>And, then maybe some CSS</p>
-
-<div class="highlight">
-<pre><span class="nt">body</span> <span class="p">{</span>
-  <span class="k">font</span><span class="o">:</span><span class="m">14px</span><span class="o">/</span><span class="m">22px</span> <span class="s1">'Quattrocento Sans'</span><span class="o">,</span> <span class="s2">"Helvetica Neue"</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
-  <span class="k">color</span><span class="o">:</span><span class="m">#666</span><span class="p">;</span>
-  <span class="k">font-weight</span><span class="o">:</span><span class="m">300</span><span class="p">;</span>
-  <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
-  <span class="k">padding</span><span class="o">:</span><span class="m">0px</span> <span class="m">0</span> <span class="m">20px</span> <span class="m">0px</span><span class="p">;</span>
-  <span class="k">background</span><span class="o">:</span> <span class="sx">url(../images/body-background.png)</span> <span class="m">#eae6d1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span><span class="m">#333</span><span class="p">;</span>
-  <span class="k">margin</span><span class="o">:</span><span class="m">0</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">p</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">table</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span> <span class="nt">dl</span> <span class="p">{</span>
-  <span class="k">margin</span><span class="o">:</span><span class="m">0</span> <span class="m">0</span> <span class="m">20px</span><span class="p">;</span>
-<span class="p">}</span>
-</pre>
-</div>
-
-        <p>Inline code would look a little different. <code>We want you to see</code> where it is, but its going to be a little less noticeable. It might also be as simple as <code>:hover</code> and as unique as <code>:first-child</code>. It is up to you. </p>
-
-        <h2>Who's this Matt Graham?</h2>
-        <p>Product designer and frontend developer at Heroku. Formerly with GitHub, Ordered List etc. Rescue diver. He can be found on <a href="http://twitter.com/#!/michigangraham">Twitter</a>, <a href="http://github.com/mattgraham">GitHub</a> and around the country for numerous events. Feel free to fork and use this team as you wish.</p>
-      </section>
+    <div class="centering">
+        <h1 class="display-4 mt-5 text-center"> <a href="https://arxiv.org/pdf/1904.12654.pdf">The Mutex Watershed and its Objective</a></h1>
+        <h3 class="mb-4 text-center">Efficient, Parameter-Free Image Partitioning</h3>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-  </body>
-</html>
+
+
+<div class="container-fluid text-center">
+
+
+
+
+  <div class="row">
+    <div class="col col-xs-4 col-sm-1 col-md-1 col-lg-1">
+        <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Steffen <br> Wolf*</a>
+    </div>
+<div class="col col-xs-4 col-sm-2 col-md-2 col-lg-2">
+<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Alberto <br> Bailoni*</a>
+</div>
+<div class="col col-xs-4 col-sm-2 col-md-2 col-lg-2">
+<a href="https://www.embl.de/research/units/cbb/kreshuk/" style="color: #065381">Constantin <br> Pape</a>
+</div>
+<div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
+<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Nasim <br> Rahaman</a>
+</div>
+<div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
+<a href="https://www.embl.de/research/units/cbb/kreshuk/" style="color: #065381">Anna <br> Kreshuk</a>
+</div>
+<div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
+<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Ullrich <br> Köthe</a>
+</div>
+<div class="col col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Fred A. <br> Hamprecht</a>
+</div>
+  </div>
+
+</div> 
+
+
+<!-- <div class="container">
+      <div class="row">
+
+TLDR; For two decades many problems 
+
+we present a fast / good 
+
+</div>
+</div>
+<br>
+ -->
+ <br> <br>
+<div class="card border-secondary mb-3 mt-3" >
+<!-- <div class="row">
+<div class="col"> -->
+<!-- <h4>Abstract</h4> -->
+<div class="card-body">
+<p class="card-text">
+
+<b>Abstract:</b> Here, we propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
+Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive <a href="#isbiresults" style="color: #fe912a">ISBI 2012 EM segmentation benchmark</a>.</p>
+<!-- </div>
+</div> -->
+</div>
+</div>
+<div class="container-fluid text-center">
+
+  <div class="row">
+     <div class="col col-sm-6 col-md-6 col-lg-9"></div>
+    <div class="col col-sm-2 col-md-2 col-lg-1"><a href="https://arxiv.org/pdf/1904.12654.pdf" type="button" class="btn btn-light">read</a></div>
+    <div class="col col-sm-2 col-md-2 col-lg-1"><a href="#paper" type="button" class="btn btn-light">cite</a></div>
+    <div class="col col-sm-2 col-md-2 col-lg-1"><a href="https://github.com/constantinpape/affogato/blob/master/example/MutexWatershed.ipynb" type="button" class="btn btn-light">code</a></div>
+    </div>
+  </div>
+  
+</div> 
+
+<!-- <div class="container">
+<div class="row">
+<div class="col bg-light">
+<h4>TLDR</h4>
+<p>
+Image partitioning, or segmentation without semantics, is the task of decomposing an image into distinct segments, or equivalently to detect closed contours. Most prior work either requires seeds, one per segment; or a threshold; or formulates the task as multicut / correlation clustering, an NP-hard problem. 
+Here, we propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
+Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive <a href="#isbiresults" style="color: #fe912a">ISBI 2012 EM segmentation benchmark</a>.</p>
+</div>
+</div>
+</div> -->
+    <br>
+
+
+
+    <!-- <table align=center width=1000px> -->
+        <h2 id="algo">The Algorithm and its Objective</h2>
+    
+    <br>
+
+<div class="container-fluid">
+  <div class="row">
+
+ <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+The Mutex Watershed, Algorithm, proceeds as follows. Given a graph \(\mathcal{G}=(V, E)\) with signed weights \(w: E \rightarrow \mathbb{R}\), do the following: sort all edges \(E\), attractive or repulsive, by their absolute weight in descending order into a priority queue. Iteratively pop all edges from the queue and add them to the active set one by one, provided that a set of conditions are satisfied.
+More specifically, if the next edge popped from the priority queue is attractive and its incident vertices are not yet in the same tree, then connect the respective trees provided this is not ruled out by a mutual exclusion constraint. If on the other hand the edge popped is repulsive, and if its incident vertices are not yet in the same tree, then add a mutual exclusion constraint between the two trees. 
+The output clustering is defined by the connected components of the final attractive active set \(A^+\).
+
+ The crucial difference to Algorithm the classical seeded watershed algorithms is that mutex constraints are no longer pre-defined, but created dynamically whenever a repulsive edge is found. However, new exclusion constraints can never override earlier, high-priority merge decisions. In this case, the repulsive edge in question is simply ignored. Similarly, an attractive edge must never override earlier and thus higher-priority must-not-link decisions. 
+
+The boolean value of the \(\text{connect\_all}\) input parameter of the algorithm does not influence the final output clustering, but defines the internal cluster connectedness: when it is set to \(\text{True}\), the algorithm adds all attractive intra-cluster edges to the active set \(A^+\). When it is set to \(\text{False}\), then a maximum spanning tree is built for each cluster similar to the seeded watershed. This variant of the algorithm will be helpful in the next section XXXXX to highlight the relation between the Mutex Watershed and the multicut problem.
+
+$$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e $$
+
+</div>
+
+    
+    <div class="col-xs-3 col-sm-3  d-md-none  d-lg-none"></div>
+    <div class="col-xs-6 col-sm-10 col-md-4 col-lg-4">
+            <div class="w3-content w3-display-container">
+                <center>
+                    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+                </center>
+                <div class="w3-display-container mySlides" style="display: none">
+                    <center>
+                        <img src="./static/img/iter1.png" width=100%;>
+                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                            unconstrained merge
+                        </div>
+                    </center>
+                </div>
+                <div class="w3-display-container mySlides" style="display: none">
+                    <center>
+                        <img src="./static/img/iter2.png" width=100%;>
+                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                            add mutex constraint
+                        </div>
+                    </center>
+                </div>
+<!--                 <div class="w3-display-container mySlides" style="display: none">
+                    <center>
+                        <img src="./static/img/iter3.png" width=100%;>
+                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                            edge (w e = 14) is not merged, because its incident vertices are already connected
+                        </div>
+                    </center>
+                </div> -->
+                <div class="w3-display-container mySlides" style="display: none">
+                    <center>
+                        <img src="./static/img/iter4.png" width=100%;>
+                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                            mutex is not added for repulsive edge (w e = −13), because its incident vertices are already connected
+                        </div>
+                    </center>
+                </div>
+                <div class="w3-display-container mySlides" style="display: none">
+                    <center>
+                        <img src="./static/img/iter5.png" width=100%;>
+                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                            attractive edge (w e = 12) is ruled out by a previously introduced mutual exclusion relation
+                        </div>
+                    </center>
+                </div>
+                <div class="w3-display-container mySlides">
+                    <center>
+                        <img src="./static/img/iter6.png" width=100%;>
+                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                            final graph partitioning
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <script>
+                var slideIndex = 1;
+                  showDivs(slideIndex);
+                  
+                  function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                  }
+                  
+                  function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = x.length}
+                    for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";  
+                    }
+                    x[slideIndex-1].style.display = "block";  
+                  }
+            </script>
+</div>   
+</div>   
+</div>
+    <br>
+<h2 id="isbiresults">Results on Neuron Segmentation Challenges</h2>
+    
+    <br>
+<div class="container-fluid">
+  <div class="row">
+
+ <div class="col-lg-8 col-sm-12">
+We evaluate the Mutex Watershed on the challenging task of 
+neuron segmentation in electron microscopy (EM) image volumes.
+This application is of key interest in connectomics, a field of 
+neuro-science that strives to reconstruct neural wiring digrams spanning complete central nervous systems. The task requires segmentation of neurons from electron microscopy images of neural tissue -- a challenging endeavor, since segmentation has to be based only on boundary information (cell membranes) and some of the boundaries are not very pronounced. Besides, cells contain membrane-bound organelles, which have to be suppressed in the segmentation. Some of the neuron protrusions are very thin, but all of those need to be preserved in the segmentation to arrive at the correct connectivity graph. While a lot of progress is being made, currently only manual tracing or proof-reading yields sufficient accuracy for correct circuit reconstruction \cite{schlegel2017Learning}.
+</div>
+    <div class="col-lg-1 col-sm-3"></div>
+    <div class="col-lg-3 col-sm-6 col-xs-6">
+        <div class="slidecontainer">
+            <!-- <h3>ISBI Segmentation Challenge Test Set</h3> -->
+            <img id="isbi_result_img" src="static/img/isbi/mix_20_16.png" width=90%;>
+<!--             <table align=center>
+                <tr>
+                <td align=center> -->
+                    Z-Position in Image Volume<span id="z_val"></span><br>
+                    <input type="range" min="1" max="29" value="15" class="slider" id="z_slice_slider" width=25%;>
+<!--                 </td>
+                <td align=center> -->
+
+                    <br>
+                    Mutex Watershed Segmentation <span id="mix"></span><br>
+                    <input type="range" min="1" max="7" value="5" class="slider" id="mix_slider" width=25%;>
+<!--                 </td>
+            </tr>
+            </table> -->
+        </div>
+        <script>
+            var z_slice_slider = document.getElementById("z_slice_slider");
+               var mix_slider = document.getElementById("mix_slider");
+               var z_slice = z_slice_slider.value;
+               var mix = mix_slider.value;
+               showResult(z_slice, mix)
+               
+               
+               z_slice_slider.oninput = function() {
+                   z_slice = this.value;
+                   showResult(z_slice, mix)
+               } 
+               
+               mix_slider.oninput = function() {
+                   mix = this.value;
+                   showResult(z_slice, mix)
+               } 
+               
+               
+               
+               function showResult(z_slice, mix) {
+               
+                   // preload image
+                   var isbi_url = `static/img/isbi/mix_${mix}0_${z_slice}.png`
+                     if (z_slice < 10) {
+                       isbi_url = `static/img/isbi/mix_${mix}0_0${z_slice}.png`
+                     }
+               
+                   var preload=new Image();
+                   preload.src=isbi_url;
+                   document.getElementById("isbi_result_img").src=isbi_url;
+               
+               }
+        </script>
+
+</div>
+</div>
+</div>
+
+
+<br>
+<div class="container">
+        <h2 id="paper">Paper</h2>
+        <center>
+        <a href="https://arxiv.org/pdf/1904.12654.pdf"><img class="paper" width=80%; src="http://www.arxiv-sanity.com/static/thumbs/1904.12654v1.pdf.jpg" /></a>
+        <br>
+            <h3 class="text-center">The Mutex Watershed and its Objective:<br>
+               Efficient, Parameter-Free Image Partitioning</h3>
+            <p>Steffen Wolf*, Alberto Bailoni*, Constantin Pape, Nasim Rahaman,<br> Anna Kreshuk, Ullrich Köthe, Fred A. Hamprecht<br> In TPAMI, 2020</p>
+        </center>
+
+  <div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+     </div>
+ </div>
+
+        <table align=center width=400px>
+            <tr>
+                <td>
+                    <span style="font-size:14pt">
+                     <center>
+                        <a href="https://arxiv.org/pdf/1904.12654.pdf">[Paper]</a>
+                     </center>
+                  </td>
+                  <td>
+                     <span style="font-size:14pt">
+                     <center>
+                        <a href="./static/bibtex_mutex_pami.txt">[Bibtex]</a>
+                     </center>
+                  </td>
+                  <td>
+                     <span style="font-size:14pt">
+                     <center>
+                        <a href="https://github.com/constantinpape/affogato">[Code]</a>
+                     </center>
+                  </td>
+                  <td>
+                     <span style="font-size:14pt">
+                     <center>
+                        <a href="https://github.com/constantinpape/affogato/blob/master/example/MutexWatershed.ipynb">[Tutorial]</a>
+                     </center>
+                  </td>
+               </tr>
+            </table>
+            <br><br>
+            <center>
+               <h3 class="text-center">The Mutex Watershed:<br> Efficient, Parameter-Free Image Partitioning</h3>
+               <p>Steffen Wolf*, Constantin Pape*, Alberto Bailoni, Nasim Rahaman,<br> Anna Kreshuk, Ullrich Köthe, Fred A. Hamprecht<br>
+               In ECCV, 2018</p>
+            </center>
+            <table align=center width=600px>
+               <tr>
+                  <td>
+                     <span style="font-size:14pt">
+                     <center>
+                        <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Steffen_Wolf_The_Mutex_Watershed_ECCV_2018_paper.pdf">[Paper]</a>
+                     </center>
+                  </td>
+                  <td>
+                     <span style="font-size:14pt">
+                     <center>
+                        <a href="./static/bibtex_mutex_eccv.txt">[Bibtex]</a>
+                     </center>
+                  </td>
+                  <td>
+                     <span style="font-size:14pt">
+                     <center>
+                        <a href="https://github.com/hci-unihd/mutex-watershed">[Code]</a>
+                     </center>
+                  </td>
+               </tr>
+            </table>
+         <br><br><br><br><br><br><br><br><br><br>
+         </div>
+         </td>
+    </main>
+
+      </body>
+   </html>

@@ -1,0 +1,7 @@
+@InProceedings{Wolf_2018_Mutex,
+author = {Wolf, Steffen and Pape, Constantin and Bailoni, Alberto and Rahaman, Nasim and Kreshuk, Anna and Kothe, Ullrich and Hamprecht, FredA.},
+title = {The Mutex Watershed: Efficient, Parameter-Free Image Partitioning},
+booktitle = {The European Conference on Computer Vision (ECCV)},
+month = {September},
+year = {2018}
+}
