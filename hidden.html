@@ -117,16 +117,25 @@ Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not onl
 </div>
 </div> -->
     <br>
-
-
-
-    <!-- <table align=center width=1000px> -->
-        <h2 id="algo">The Algorithm and its Objective</h2>
-    
-    <br>
-
+        <h2 id="algo">Motivation</h2>
 <div class="container-fluid">
   <div class="row">
+    <div class="col-md-8 col-sm-12">
+               Image partitioning, or segmentation without semantics, is the task of decomposing an image into distinct segments, or equivalently to detect closed contours. Most prior work either requires seeds, one per segment; or a threshold; or formulates the task as multicut / correlation clustering, an NP-hard problem. 
+Here, we propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
+Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive
+    </div>
+  </div>
+</div>
+
+    <br>
+    <!-- <table align=center width=1000px> -->
+        <h2 id="algo">The Algorithm and its Objective</h2>
+    <div class="container-fluid">
+  <div class="row">
+
+    <br>
+
 
  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 The Mutex Watershed, Algorithm, proceeds as follows. Given a graph \(\mathcal{G}=(V, E)\) with signed weights \(w: E \rightarrow \mathbb{R}\), do the following: sort all edges \(E\), attractive or repulsive, by their absolute weight in descending order into a priority queue. Iteratively pop all edges from the queue and add them to the active set one by one, provided that a set of conditions are satisfied.
@@ -236,22 +245,12 @@ neuro-science that strives to reconstruct neural wiring digrams spanning complet
     <div class="col-lg-1 col-sm-3"></div>
     <div class="col-lg-3 col-sm-6 col-xs-6">
         <div class="slidecontainer">
-            <!-- <h3>ISBI Segmentation Challenge Test Set</h3> -->
             <img id="isbi_result_img" src="static/img/isbi/mix_20_16.png" width=90%;>
-<!--             <table align=center>
-                <tr>
-                <td align=center> -->
                     Z-Position in Image Volume<span id="z_val"></span><br>
                     <input type="range" min="1" max="29" value="15" class="slider" id="z_slice_slider" width=25%;>
-<!--                 </td>
-                <td align=center> -->
-
                     <br>
                     Mutex Watershed Segmentation <span id="mix"></span><br>
                     <input type="range" min="1" max="7" value="5" class="slider" id="mix_slider" width=25%;>
-<!--                 </td>
-            </tr>
-            </table> -->
         </div>
         <script>
             var z_slice_slider = document.getElementById("z_slice_slider");
