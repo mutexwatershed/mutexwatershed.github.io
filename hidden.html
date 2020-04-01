@@ -38,9 +38,6 @@
 
 <div class="container-fluid text-center">
 
-
-
-
   <div class="row">
     <div class="col col-xs-4 col-sm-1 col-md-1 col-lg-1">
         <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Steffen <br> Wolf*</a>
@@ -87,7 +84,7 @@ we present a fast / good
 <div class="card-body">
 <p class="card-text">
 
-<b>Abstract:</b> Here, we propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
+<b>Abstract:</b> We propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
 Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive <a href="#isbiresults" style="color: #fe912a">ISBI 2012 EM segmentation benchmark</a>.</p>
 <!-- </div>
 </div> -->
@@ -138,15 +135,39 @@ Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not onl
 
 
  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-The Mutex Watershed, Algorithm, proceeds as follows. Given a graph \(\mathcal{G}=(V, E)\) with signed weights \(w: E \rightarrow \mathbb{R}\), do the following: sort all edges \(E\), attractive or repulsive, by their absolute weight in descending order into a priority queue. Iteratively pop all edges from the queue and add them to the active set one by one, provided that a set of conditions are satisfied.
-More specifically, if the next edge popped from the priority queue is attractive and its incident vertices are not yet in the same tree, then connect the respective trees provided this is not ruled out by a mutual exclusion constraint. If on the other hand the edge popped is repulsive, and if its incident vertices are not yet in the same tree, then add a mutual exclusion constraint between the two trees. 
-The output clustering is defined by the connected components of the final attractive active set \(A^+\).
 
- The crucial difference to Algorithm the classical seeded watershed algorithms is that mutex constraints are no longer pre-defined, but created dynamically whenever a repulsive edge is found. However, new exclusion constraints can never override earlier, high-priority merge decisions. In this case, the repulsive edge in question is simply ignored. Similarly, an attractive edge must never override earlier and thus higher-priority must-not-link decisions. 
 
-The boolean value of the \(\text{connect\_all}\) input parameter of the algorithm does not influence the final output clustering, but defines the internal cluster connectedness: when it is set to \(\text{True}\), the algorithm adds all attractive intra-cluster edges to the active set \(A^+\). When it is set to \(\text{False}\), then a maximum spanning tree is built for each cluster similar to the seeded watershed. This variant of the algorithm will be helpful in the next section XXXXX to highlight the relation between the Mutex Watershed and the multicut problem.
 
-$$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e $$
+
+
+
+ <ul>
+
+  <li> <b>Notation:</b>Model  \(w : E \rightarrow \mathbb{R}\) associated with each edge is a merge affinity: the higher this number, the higher the inclination of the two incident vertices to be assigned to the same cluster. Conversely, large negative affinity indicates a greater desire of the incident vertices to be in different clusters.
+  <!--  In our application, each vertex corresponds to one pixel in the image to be segmented.  -->
+We call an edge \(e \in E\) repulsive if \(w_{e}<0\) and we call it attractive if \(w_{e}>0\) 
+<!-- and collect them in \(E^{-} = \{  e \in E \,|\, w_e < 0 \}\) and \(E^{+} = \{ e \in E \, | \, w_e > 0 \}\) respectively. --></li>
+  <li>The Mutex Watershed, Algorithm, proceeds as follows. 
+  <ul>
+    <li>Given a graph \(\mathcal{G}=(V, E)\) </li>
+    <li><b>The Mutex Watershed:</b>
+    <ul> 
+    <li>Sort all edges \(E\), attractive or repulsive, by their absolute weight in descending order into a priority queue. </li>
+    <li>Iteratively pop all edges from the queue and add them to the active set one by one, provided that a set of conditions are satisfied. More specifically, if the next edge popped from the priority queue is attractive and its incident vertices are not yet connected, then connect the respective trees provided this is not ruled out by a mutual exclusion constraint. If on the other hand the edge popped is repulsive, and if its incident vertices are not yet in the same tree, then add a mutual exclusion constraint between the two trees. </li>
+
+
+    </ul>
+    </li>
+    <li>
+The output clustering is defined by the connected components of the final attractive active set \(A^+\).</li>
+
+ The crucial difference to Algorithm the classical seeded watershed algorithms is that mutex constraints are no longer pre-defined, but created dynamically whenever a repulsive edge is found. However, new exclusion constraints can never override earlier, high-priority merge decisions. In this case, the repulsive edge in question is simply ignored. Similarly, an attractive edge must never override earlier and thus higher-priority must-not-link decisions. </li>
+  <li>$$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e $$</li>
+</ul> 
+
+
+
+
 
 </div>
 
@@ -154,6 +175,7 @@ $$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e
     <div class="col-xs-3 col-sm-3  d-md-none  d-lg-none"></div>
     <div class="col-xs-6 col-sm-10 col-md-4 col-lg-4">
             <div class="w3-content w3-display-container">
+                <p><b>Figure 1: </b>Interactive Mutex Watershed Example. Use the arrows to follow the MWS iterations. Edges are activated (solid lines) in order of absolute weight. </p>
                 <center>
                     <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
@@ -230,21 +252,36 @@ $$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e
 </div>   
 </div>
     <br>
-<h2 id="isbiresults">Results on Neuron Segmentation Challenges</h2>
     
     <br>
 <div class="container-fluid">
   <div class="row">
 
  <div class="col-lg-8 col-sm-12">
-We evaluate the Mutex Watershed on the challenging task of 
+<h2 id="isbiresults">Results on Neuron Segmentation Challenges</h2>
+<p>We evaluate the Mutex Watershed on the challenging task of 
 neuron segmentation in electron microscopy (EM) image volumes.
 This application is of key interest in connectomics, a field of 
-neuro-science that strives to reconstruct neural wiring digrams spanning complete central nervous systems. The task requires segmentation of neurons from electron microscopy images of neural tissue -- a challenging endeavor, since segmentation has to be based only on boundary information (cell membranes) and some of the boundaries are not very pronounced. Besides, cells contain membrane-bound organelles, which have to be suppressed in the segmentation. Some of the neuron protrusions are very thin, but all of those need to be preserved in the segmentation to arrive at the correct connectivity graph. While a lot of progress is being made, currently only manual tracing or proof-reading yields sufficient accuracy for correct circuit reconstruction \cite{schlegel2017Learning}.
+neuro-science that strives to reconstruct neural wiring digrams spanning complete central nervous systems. The task requires segmentation of neurons from electron microscopy images of neural tissue -- a challenging endeavor, since segmentation has to be based only on boundary information (cell membranes) and some of the boundaries are not very pronounced. Besides, cells contain membrane-bound organelles, which have to be suppressed in the segmentation. Some of the neuron protrusions are very thin, but all of those need to be preserved in the segmentation to arrive at the correct connectivity graph.</p>
+<p>
+We estimate the affinities / edge for a graph with fixed neighborhood structure using a 3D-Unet (see Fig. 6 in our paper). This fixed neighborhood consists of a combination of local attractive and long-range repulsive edges.
+</p>
+<p>Our method holds the top entry in the <a href="http://brainiac2.mit.edu/isbi_challenge/leaders-board-new">ISBI challenge leader board</a> at the time of submission. This is especially remarkable insofar as it is simpler than the methods holding the other top entries. </p>
+<p>
+<b>Update:</b> Since these results were published, our method has become a part of two state-of-the-art segmentation pipelines by Hirsch, Mais, and Kainmueller [1] and Lee et al. [2]. 
+</p>
+
+<p><small>
+[1] <a href="https://arxiv.org/pdf/2001.07626">Hirsch, Peter, Lisa Mais, and Dagmar Kainmueller. "PatchPerPix for Instance Segmentation." (2020)</a>
+<br>
+[2] <a href="https://arxiv.org/pdf/1909.09872">Lee, Kisuk, Ran Lu, Kyle Luther, and H. Sebastian Seung. "Learning Dense Voxel Embeddings for 3D Neuron Reconstruction." (2019)</a>
+</small></p>
+
 </div>
-    <div class="col-lg-1 col-sm-3"></div>
+
     <div class="col-lg-3 col-sm-6 col-xs-6">
         <div class="slidecontainer">
+            <p><b>Figure 2: </b>Mutex Watershed Results on ISBI</p>
             <img id="isbi_result_img" src="static/img/isbi/mix_20_16.png" width=90%;>
                     Z-Position in Image Volume<span id="z_val"></span><br>
                     <input type="range" min="1" max="29" value="15" class="slider" id="z_slice_slider" width=25%;>
@@ -252,6 +289,7 @@ neuro-science that strives to reconstruct neural wiring digrams spanning complet
                     Mutex Watershed Segmentation <span id="mix"></span><br>
                     <input type="range" min="1" max="7" value="5" class="slider" id="mix_slider" width=25%;>
         </div>
+        <div class="col-lg-1 col-sm-3"></div>
         <script>
             var z_slice_slider = document.getElementById("z_slice_slider");
                var mix_slider = document.getElementById("mix_slider");
