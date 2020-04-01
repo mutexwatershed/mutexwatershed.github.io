@@ -184,7 +184,7 @@ The output clustering is defined by the connected components of the final attrac
                     <center>
                         <img src="./static/img/iter1.png" width=100%;>
                         <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            unconstrained merge
+                            First iteration: Start with the edge with larges absolute weight (\(w_e=20\)). It is an attractive edge, therefore merge both nodes.
                         </div>
                     </center>
                 </div>
@@ -192,23 +192,15 @@ The output clustering is defined by the connected components of the final attrac
                     <center>
                         <img src="./static/img/iter2.png" width=100%;>
                         <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            add mutex constraint
+                            Second iteration: The next edge with second larges absolute weight (\(w_e=-19\)) is repulsive. Therefore, add a mutual exclusion constraint between the incident nodes.
                         </div>
                     </center>
                 </div>
-<!--                 <div class="w3-display-container mySlides" style="display: none">
-                    <center>
-                        <img src="./static/img/iter3.png" width=100%;>
-                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            edge (w e = 14) is not merged, because its incident vertices are already connected
-                        </div>
-                    </center>
-                </div> -->
                 <div class="w3-display-container mySlides" style="display: none">
                     <center>
                         <img src="./static/img/iter4.png" width=100%;>
                         <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            mutex is not added for repulsive edge (w e = −13), because its incident vertices are already connected
+                            Noter that when repulsive edge \(w_e = −13\) is considered no mutex is not added, because its incident vertices are already connected.
                         </div>
                     </center>
                 </div>
@@ -216,7 +208,7 @@ The output clustering is defined by the connected components of the final attrac
                     <center>
                         <img src="./static/img/iter5.png" width=100%;>
                         <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            attractive edge (w e = 12) is ruled out by a previously introduced mutual exclusion relation
+                            The attractive edge \(w_e = 12\) is overruled by a previously introduced mutual exclusion relation
                         </div>
                     </center>
                 </div>
@@ -224,7 +216,7 @@ The output clustering is defined by the connected components of the final attrac
                     <center>
                         <img src="./static/img/iter6.png" width=100%;>
                         <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            final graph partitioning
+                            
                         </div>
                     </center>
                 </div>
