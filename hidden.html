@@ -114,7 +114,7 @@ Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not onl
 </div>
 </div> -->
     <br>
-        <h2 id="algo">Motivation</h2>
+<!--         <h2 id="algo">Motivation</h2>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 col-sm-12">
@@ -123,7 +123,7 @@ Here, we propose an efficient algorithm for graph partitioning, the <a href="#al
 Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive
     </div>
   </div>
-</div>
+</div> -->
 
     <br>
     <!-- <table align=center width=1000px> -->
@@ -137,38 +137,52 @@ Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not onl
  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
 
+    <p>We present a new watershed algorithm that, for the first time, uses attractive and repulsive interactions. Here, we will introduce the algorithm and give you an overview of the paper. If you are interested in our detailed theoretical analysis check out out <a href="#paper">TPAMI 2020 paper</a>. In it, we show that this simple algorithm finds the global optimum of a meaningful objective function and show its relation to the Power-Watershed Framework, as well as the NP-hard multi cut problem.</p>
+
+    <p><b>Notation:</b> The Mutex Watershed operates on an edge weighted graph \(\mathcal{G}=(V, E)\). Consider for example the graph in Figure 1. 
+    In contrast to the classical watershed, the graph weights/affinities \(w : E \rightarrow \mathbb{R}\), may be positive and negative. The higher this number, the higher the inclination of the two incident vertices to be assigned to the same cluster. Conversely, large negative affinity indicates a greater desire of the incident vertices to be in different clusters. We call an edge \(e \in E\) repulsive if \(w_{e}<0\) and we call it attractive if \(w_{e}>0\).</p>
+
+    <p>
+        A watershed segmentation can be described as a set of attractive edges \(A^+\) that connect nodes and form clusters (bold green lines in Figure 1).
+        In the classical watershed algorithm the number of clusters is defined by sets of seed nodes that may not be connected. Unfortunately, clustering with automated seed selection remains a fragile and error-fraught process, because every missed or hallucinated seed causes an under- or oversegmentation error. In this work, we replace seeds nodes with edges that introduce mutual exclusion constraints. In particular, we use a set of repulsive edges \(A^-\). If two clusters are connected via an edge in \(A^-\) merging these clusters is prohibited.
+     </p>
+     <p>
+<!--         interactions between pixels are available, then
+a generalization of the watershed algorithm can be devised
+that segments an image without the need for seeds or stop-
+ping criteria or thresholds. -->
 
 
-
-
- <ul>
-
-  <li> <b>Notation:</b>Model  \(w : E \rightarrow \mathbb{R}\) associated with each edge is a merge affinity: the higher this number, the higher the inclination of the two incident vertices to be assigned to the same cluster. Conversely, large negative affinity indicates a greater desire of the incident vertices to be in different clusters.
-  <!--  In our application, each vertex corresponds to one pixel in the image to be segmented.  -->
-We call an edge \(e \in E\) repulsive if \(w_{e}<0\) and we call it attractive if \(w_{e}>0\) 
-<!-- and collect them in \(E^{-} = \{  e \in E \,|\, w_e < 0 \}\) and \(E^{+} = \{ e \in E \, | \, w_e > 0 \}\) respectively. --></li>
-  <li>The Mutex Watershed, Algorithm, proceeds as follows. 
+        <!--         encode merges and mutual exclusion constraints, respectively. Clusters are
+        \(\text{connected}(i, j; A^+)\Leftrightarrow \exists \text{ path } \pi \in \Pi_{i \rightarrow j} \text{ with }\pi \subseteq A^+\)
+\(\text{cluster}(i; A^+)  =  \{i\} \cup \{j: \text{connected}(i,j; A^+) \}\)
+\(\text{mutex}(i, j; A^+, A^-)\Leftrightarrow \exists \, e=(k,l)\in A^- \text{ with } \\  k \in \text{cluster}(i; A^+) \text{ and}\)
+\( l \in \text{cluster}(j; A^+) \text{ and}  \)
+\(\text{cluster}(i; A^+) \neq \text{cluster}(j; A^+) \) -->
+    </p>
+<p><b>The Mutex Watershed Algorithm</b> builds up \(A^+\) and \(A^-\) as follows:
   <ul>
-    <li>Given a graph \(\mathcal{G}=(V, E)\) </li>
-    <li><b>The Mutex Watershed:</b>
-    <ul> 
     <li>Sort all edges \(E\), attractive or repulsive, by their absolute weight in descending order into a priority queue. </li>
     <li>Iteratively pop all edges from the queue and add them to the active set one by one, provided that a set of conditions are satisfied. More specifically, if the next edge popped from the priority queue is attractive and its incident vertices are not yet connected, then connect the respective trees provided this is not ruled out by a mutual exclusion constraint. If on the other hand the edge popped is repulsive, and if its incident vertices are not yet in the same tree, then add a mutual exclusion constraint between the two trees. </li>
+    </ul>  
 
 
-    </ul>
-    </li>
-    <li>
-The output clustering is defined by the connected components of the final attractive active set \(A^+\).</li>
+<!-- The output clustering is defined by the connected components of the final attractive active set \(A^+\). The crucial difference to Algorithm the classical seeded watershed algorithms is that mutex constraints are no longer pre-defined, but created dynamically whenever a repulsive edge is found. -->
+</p>
+<p>
 
- The crucial difference to Algorithm the classical seeded watershed algorithms is that mutex constraints are no longer pre-defined, but created dynamically whenever a repulsive edge is found. However, new exclusion constraints can never override earlier, high-priority merge decisions. In this case, the repulsive edge in question is simply ignored. Similarly, an attractive edge must never override earlier and thus higher-priority must-not-link decisions. </li>
-  <li>$$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e $$</li>
-</ul> 
+<!-- However, new exclusion constraints can never override earlier, high-priority merge decisions. In this case, the repulsive edge in question is simply ignored. Similarly, an attractive edge must never override earlier and thus higher-priority must-not-link decisions.  -->
+We prove in our paper that the edge indicator \( x_e = 
+\begin{cases}
+    0, &\text{ if } e \in A^+ \cup A^-\\
+    1  &\text{ else }
+\end{cases} \) of the Mutex Watershed minimizes the objective 
+ $$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e $$
+where SC corresponds to the set of valid clusterings and \(p\) is chosen large enough.
 
+Furthermore we analyze it's theoretical scaling behavior and find that on our analyzed datasets it scales linearithmically with \(\mathcal{O}(E \log E)\)
 
-
-
-
+</p>
 </div>
 
     
@@ -246,11 +260,11 @@ The output clustering is defined by the connected components of the final attrac
     <br>
     
     <br>
+<h2 id="isbiresults">Results on Neuron Segmentation Challenges</h2>
 <div class="container-fluid">
   <div class="row">
 
  <div class="col-lg-8 col-sm-12">
-<h2 id="isbiresults">Results on Neuron Segmentation Challenges</h2>
 <p>We evaluate the Mutex Watershed on the challenging task of 
 neuron segmentation in electron microscopy (EM) image volumes.
 This application is of key interest in connectomics, a field of 
@@ -258,7 +272,7 @@ neuro-science that strives to reconstruct neural wiring digrams spanning complet
 <p>
 We estimate the affinities / edge for a graph with fixed neighborhood structure using a 3D-Unet (see Fig. 6 in our paper). This fixed neighborhood consists of a combination of local attractive and long-range repulsive edges.
 </p>
-<p>Our method holds the top entry in the <a href="http://brainiac2.mit.edu/isbi_challenge/leaders-board-new">ISBI challenge leader board</a> at the time of submission. This is especially remarkable insofar as it is simpler than the methods holding the other top entries. </p>
+<p>Our method holds the top entry in the <a href="http://brainiac2.mit.edu/isbi_challenge/leaders-board-new">ISBI challenge leader board</a> at the time of submission. This is especially remarkable insofar as it is simpler than the methods holding the other top entries (more details in section 5.2). </p>
 <p>
 <b>Update:</b> Since these results were published, our method has become a part of two state-of-the-art segmentation pipelines by Hirsch, Mais, and Kainmueller [1] and Lee et al. [2]. 
 </p>
