@@ -6,16 +6,13 @@
 <link rel="icon" href="favicon.ico" type="image/png"/>
 <!-- ======================================================================= -->
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+<link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <script type="text/javascript">
     google.load("jquery", "1.3.2");
@@ -36,56 +33,41 @@
     </div>
 
 
-<div class="container-fluid text-center">
+    <div class="container-fluid text-center">
 
-  <div class="row">
-    <div class="col col-xs-4 col-sm-1 col-md-1 col-lg-1">
-        <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Steffen <br> Wolf*</a>
+      <div class="row">
+        <div class="col col-xs-4 col-sm-1 col-md-1 col-lg-1">
+            <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Steffen <br> Wolf*</a>
+        </div>
+        <div class="col col-xs-4 col-sm-2 col-md-2 col-lg-2">
+            <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Alberto <br> Bailoni*</a>
+        </div>
+        <div class="col col-xs-4 col-sm-2 col-md-2 col-lg-2">
+            <a href="https://www.embl.de/research/units/cbb/kreshuk/" style="color: #065381">Constantin <br> Pape</a>
+        </div>
+        <div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
+            <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Nasim <br> Rahaman</a>
+        </div>
+        <div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
+            <a href="https://www.embl.de/research/units/cbb/kreshuk/" style="color: #065381">Anna <br> Kreshuk</a>
+        </div>
+        <div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
+            <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Ullrich <br> Köthe</a>
+        </div>
+        <div class="col col-xs-3 col-sm-1 col-md-1 col-lg-1">
+            <a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Fred A. <br> Hamprecht</a>
+        </div>
     </div>
-<div class="col col-xs-4 col-sm-2 col-md-2 col-lg-2">
-<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Alberto <br> Bailoni*</a>
-</div>
-<div class="col col-xs-4 col-sm-2 col-md-2 col-lg-2">
-<a href="https://www.embl.de/research/units/cbb/kreshuk/" style="color: #065381">Constantin <br> Pape</a>
-</div>
-<div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
-<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Nasim <br> Rahaman</a>
-</div>
-<div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
-<a href="https://www.embl.de/research/units/cbb/kreshuk/" style="color: #065381">Anna <br> Kreshuk</a>
-</div>
-<div class="col col-xs-3 col-sm-2 col-md-2 col-lg-2">
-<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Ullrich <br> Köthe</a>
-</div>
-<div class="col col-xs-3 col-sm-1 col-md-1 col-lg-1">
-<a href="https://hci.iwr.uni-heidelberg.de/people#mip" style="color: #065381">Fred A. <br> Hamprecht</a>
-</div>
-  </div>
 
 </div> 
 
-
-<!-- <div class="container">
-      <div class="row">
-
-TLDR; For two decades many problems 
-
-we present a fast / good 
-
-</div>
-</div>
-<br>
- -->
- <br> <br>
+<br> <br>
 <div class="card border-secondary mb-3 mt-3" >
-<!-- <div class="row">
-<div class="col"> -->
-<!-- <h4>Abstract</h4> -->
-<div class="card-body">
-<p class="card-text">
+    <div class="card-body">
+        <p class="card-text">
 
-<b>Abstract:</b> We propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
-Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive <a href="#isbiresults" style="color: #fe912a">ISBI 2012 EM segmentation benchmark</a>.</p>
+            <b>Abstract:</b> We propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
+            Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive <a href="#isbiresults" style="color: #fe912a">ISBI 2012 EM segmentation benchmark</a>.</p>
 <!-- </div>
 </div> -->
 </div>
@@ -94,325 +76,306 @@ Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not onl
 
   <div class="row">
      <div class="col col-sm-6 col-md-6 col-lg-9"></div>
-    <div class="col col-sm-2 col-md-2 col-lg-1"><a href="https://arxiv.org/pdf/1904.12654.pdf" type="button" class="btn btn-light">read</a></div>
-    <div class="col col-sm-2 col-md-2 col-lg-1"><a href="#paper" type="button" class="btn btn-light">cite</a></div>
-    <div class="col col-sm-2 col-md-2 col-lg-1"><a href="https://github.com/constantinpape/affogato/blob/master/example/MutexWatershed.ipynb" type="button" class="btn btn-light">code</a></div>
-    </div>
-  </div>
-  
-</div> 
+     <div class="col col-sm-2 col-md-2 col-lg-1"><a href="https://arxiv.org/pdf/1904.12654.pdf" type="button" class="btn btn-light">read</a></div>
+     <div class="col col-sm-2 col-md-2 col-lg-1"><a href="#paper" type="button" class="btn btn-light">cite</a></div>
+     <div class="col col-sm-2 col-md-2 col-lg-1"><a href="https://github.com/constantinpape/affogato/blob/master/example/MutexWatershed.ipynb" type="button" class="btn btn-light">code</a></div>
+ </div>
 
-<!-- <div class="container">
-<div class="row">
-<div class="col bg-light">
-<h4>TLDR</h4>
-<p>
-Image partitioning, or segmentation without semantics, is the task of decomposing an image into distinct segments, or equivalently to detect closed contours. Most prior work either requires seeds, one per segment; or a threshold; or formulates the task as multicut / correlation clustering, an NP-hard problem. 
-Here, we propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
-Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive <a href="#isbiresults" style="color: #fe912a">ISBI 2012 EM segmentation benchmark</a>.</p>
-</div>
-</div>
-</div> -->
-    <br>
-<!--         <h2 id="algo">Motivation</h2>
+</div> 
+<br>
+<br>
+<h2 id="algo">The Algorithm and its Objective</h2>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-sm-12">
-               Image partitioning, or segmentation without semantics, is the task of decomposing an image into distinct segments, or equivalently to detect closed contours. Most prior work either requires seeds, one per segment; or a threshold; or formulates the task as multicut / correlation clustering, an NP-hard problem. 
-Here, we propose an efficient algorithm for graph partitioning, the <a href="#algo" style="color: #fe912a">“Mutex
-Watershed”</a>. Unlike seeded watershed, the algorithm can accommodate not only attractive but also repulsive cues, allowing it to find a previously unspecified number of segments without the need for explicit seeds or a tunable threshold. We also prove that this simple algorithm solves to global optimality an <a href="#objfunc" style="color: #fe912a"> objective function</a> that is intimately related to the multicut / correlation clustering integer linear programming formulation. The algorithm is deterministic, very simple to implement, and has empirically linearithmic complexity. When presented with short-range attractive and long-range repulsive cues from a deep neural network, the Mutex Watershed gives the best results currently known for the competitive
+
+    <br>
+
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+
+        <p>
+            We present a new watershed algorithm that, for the first time, uses attractive and repulsive interactions. Here, we will introduce the algorithm and give you an overview of the paper. If you are interested in our detailed theoretical analysis check out out <a href="#paper">TPAMI 2020 paper</a>. In it, we show that this simple algorithm finds the global optimum of a meaningful objective function and show its relation to the Power-Watershed Framework, as well as the NP-hard multi cut problem.
+        </p>
+
+        <p><b>Notation:</b> The Mutex Watershed operates on an edge weighted graph \(\mathcal{G}=(V, E)\). Consider for example the graph in Figure 1. 
+            In contrast to the classical watershed, the graph weights/affinities \(w : E \rightarrow \mathbb{R}\), may be positive and negative. The higher this number, the higher the inclination of the two incident vertices to be assigned to the same cluster. Conversely, large negative affinity indicates a greater desire of the incident vertices to be in different clusters. We call an edge \(e \in E\) repulsive if \(w_{e}<0\) and we call it attractive if \(w_{e}>0\).
+        </p>
+
+        <p>
+            A watershed segmentation can be described as a set of attractive edges \(A^+\) that connect nodes and form clusters (bold green lines in Figure 1).
+            In the classical watershed algorithm the number of clusters is defined by sets of seed nodes that may not be connected. Unfortunately, clustering with automated seed selection remains a fragile and error-fraught process, because every missed or hallucinated seed causes an under- or oversegmentation error. In this work, we replace seeds nodes with edges that introduce mutual exclusion constraints. In particular, we use a set of repulsive edges \(A^-\). If two clusters are connected via an edge in \(A^-\) merging these clusters is prohibited.
+        </p>
+        <p>
+            <b>The Mutex Watershed Algorithm</b> builds up \(A^+\) and \(A^-\) as follows:
+        </p>
+            <ul>
+                <li>
+                    Sort all edges \(E\), attractive or repulsive, by their absolute weight in descending order into a priority queue.
+                </li>
+                <li>
+                    Iteratively pop all edges from the queue and add them to the active set one by one, provided that a set of conditions are satisfied. More specifically, if the next edge popped from the priority queue is attractive and its incident vertices are not yet connected, then connect the respective trees provided this is not ruled out by a mutual exclusion constraint. If on the other hand the edge popped is repulsive, and if its incident vertices are not yet in the same tree, then add a mutual exclusion constraint between the two trees.
+                </li>
+            </ul>
+        <p>
+
+            We prove in our paper that the edge indicator \( x_e = 
+            \begin{cases}
+            0, &\text{ if } e \in A^+ \cup A^-\\
+            1  &\text{ else }
+            \end{cases} \) of the Mutex Watershed minimizes the objective 
+            $$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e $$
+            where SC corresponds to the set of valid clusterings and \(p\) is chosen large enough.
+
+            Furthermore we analyze it's theoretical scaling behavior and find that on our analyzed datasets it scales linearithmically with \(\mathcal{O}(E \log E)\)
+        </p>
+        <br>
+        <br>
+        <br>
+        <h2 id="isbiresults">Results on Neuron Segmentation Challenges</h2>
+
+        <p>We evaluate the Mutex Watershed on the challenging task of 
+            neuron segmentation in electron microscopy (EM) image volumes.
+            This application is of key interest in connectomics, a field of 
+        neuro-science that strives to reconstruct neural wiring digrams spanning complete central nervous systems. The task requires segmentation of neurons from electron microscopy images of neural tissue -- a challenging endeavor, since segmentation has to be based only on boundary information (cell membranes) and some of the boundaries are not very pronounced. Besides, cells contain membrane-bound organelles, which have to be suppressed in the segmentation. Some of the neuron protrusions are very thin, but all of those need to be preserved in the segmentation to arrive at the correct connectivity graph.</p>
+        <p>
+            We estimate the affinities / edge for a graph with fixed neighborhood structure using a 3D-Unet (see Fig. 6 in our paper). This fixed neighborhood consists of a combination of local attractive and long-range repulsive edges.
+        </p>
+        <p>Our method holds the top entry in the <a href="http://brainiac2.mit.edu/isbi_challenge/leaders-board-new">ISBI challenge leader board</a> at the time of submission. This is especially remarkable insofar as it is simpler than the methods holding the other top entries (more details in section 5.2). </p>
+        <p>
+            <b>Update:</b> Since these results were published, our method has become a part of two state-of-the-art segmentation pipelines by Hirsch, Mais, and Kainmueller [1] and Lee et al. [2]. The MWS has also been used for segmenting all 12,000 nuclei in an EM volume of Platynereis dumerilii, a model organism in evolutionary biology. 
+            The 8 TB EM data-set forms the reference volume for a joint morphology and gene expression atlas that allows to interrogate the relationship of 
+            genotypic and phenotypic development. The segmented nuclei form an essential part and need to be reconstructed faithfully, in order to correlate
+        nuclear morphology and expression. The authors of [3] have found that MWS performs this task with high accuracy while still scaling to the large data-set (see Figure 3).</p>
+
+
+
+        <p><small>
+            [1] <a href="https://arxiv.org/pdf/2001.07626">Hirsch, Peter, Lisa Mais, and Dagmar Kainmueller. "PatchPerPix for Instance Segmentation." (2020)</a>
+            <br>
+            [2] <a href="https://arxiv.org/pdf/1909.09872">Lee, Kisuk, Ran Lu, Kyle Luther, and H. Sebastian Seung. "Learning Dense Voxel Embeddings for 3D Neuron Reconstruction." (2019)</a><br>
+            [3] <a href="https://www.biorxiv.org/content/10.1101/2020.02.26.961037v1.abstract">Vergara, Hernando M., Constantin Pape, Kimberly Meechan, Valentyna Zinchenko, Christel Genoud, Adrian A. Wanner, Benjamin Titze et al. "Whole-body integration of gene expression and single-cell morphology." (2020).</a>
+        </small></p>
+
+
+
+
     </div>
-  </div>
-</div> -->
-
-    <br>
-    <!-- <table align=center width=1000px> -->
-        <h2 id="algo">The Algorithm and its Objective</h2>
-    <div class="container-fluid">
-  <div class="row">
-
-    <br>
 
 
- <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-
-
-    <p>We present a new watershed algorithm that, for the first time, uses attractive and repulsive interactions. Here, we will introduce the algorithm and give you an overview of the paper. If you are interested in our detailed theoretical analysis check out out <a href="#paper">TPAMI 2020 paper</a>. In it, we show that this simple algorithm finds the global optimum of a meaningful objective function and show its relation to the Power-Watershed Framework, as well as the NP-hard multi cut problem.</p>
-
-    <p><b>Notation:</b> The Mutex Watershed operates on an edge weighted graph \(\mathcal{G}=(V, E)\). Consider for example the graph in Figure 1. 
-    In contrast to the classical watershed, the graph weights/affinities \(w : E \rightarrow \mathbb{R}\), may be positive and negative. The higher this number, the higher the inclination of the two incident vertices to be assigned to the same cluster. Conversely, large negative affinity indicates a greater desire of the incident vertices to be in different clusters. We call an edge \(e \in E\) repulsive if \(w_{e}<0\) and we call it attractive if \(w_{e}>0\).</p>
-
-    <p>
-        A watershed segmentation can be described as a set of attractive edges \(A^+\) that connect nodes and form clusters (bold green lines in Figure 1).
-        In the classical watershed algorithm the number of clusters is defined by sets of seed nodes that may not be connected. Unfortunately, clustering with automated seed selection remains a fragile and error-fraught process, because every missed or hallucinated seed causes an under- or oversegmentation error. In this work, we replace seeds nodes with edges that introduce mutual exclusion constraints. In particular, we use a set of repulsive edges \(A^-\). If two clusters are connected via an edge in \(A^-\) merging these clusters is prohibited.
-     </p>
-     <p>
-<!--         interactions between pixels are available, then
-a generalization of the watershed algorithm can be devised
-that segments an image without the need for seeds or stop-
-ping criteria or thresholds. -->
-
-
-        <!--         encode merges and mutual exclusion constraints, respectively. Clusters are
-        \(\text{connected}(i, j; A^+)\Leftrightarrow \exists \text{ path } \pi \in \Pi_{i \rightarrow j} \text{ with }\pi \subseteq A^+\)
-\(\text{cluster}(i; A^+)  =  \{i\} \cup \{j: \text{connected}(i,j; A^+) \}\)
-\(\text{mutex}(i, j; A^+, A^-)\Leftrightarrow \exists \, e=(k,l)\in A^- \text{ with } \\  k \in \text{cluster}(i; A^+) \text{ and}\)
-\( l \in \text{cluster}(j; A^+) \text{ and}  \)
-\(\text{cluster}(i; A^+) \neq \text{cluster}(j; A^+) \) -->
-    </p>
-<p><b>The Mutex Watershed Algorithm</b> builds up \(A^+\) and \(A^-\) as follows:
-  <ul>
-    <li>Sort all edges \(E\), attractive or repulsive, by their absolute weight in descending order into a priority queue. </li>
-    <li>Iteratively pop all edges from the queue and add them to the active set one by one, provided that a set of conditions are satisfied. More specifically, if the next edge popped from the priority queue is attractive and its incident vertices are not yet connected, then connect the respective trees provided this is not ruled out by a mutual exclusion constraint. If on the other hand the edge popped is repulsive, and if its incident vertices are not yet in the same tree, then add a mutual exclusion constraint between the two trees. </li>
-    </ul>  
-
-
-<!-- The output clustering is defined by the connected components of the final attractive active set \(A^+\). The crucial difference to Algorithm the classical seeded watershed algorithms is that mutex constraints are no longer pre-defined, but created dynamically whenever a repulsive edge is found. -->
-</p>
-<p>
-
-<!-- However, new exclusion constraints can never override earlier, high-priority merge decisions. In this case, the repulsive edge in question is simply ignored. Similarly, an attractive edge must never override earlier and thus higher-priority must-not-link decisions.  -->
-We prove in our paper that the edge indicator \( x_e = 
-\begin{cases}
-    0, &\text{ if } e \in A^+ \cup A^-\\
-    1  &\text{ else }
-\end{cases} \) of the Mutex Watershed minimizes the objective 
- $$ \min_{x \in \mathsf{SC}(\mathcal{G}, w)} \quad \sum_{e \in E}  |w_e|^p \, x_e $$
-where SC corresponds to the set of valid clusterings and \(p\) is chosen large enough.
-
-Furthermore we analyze it's theoretical scaling behavior and find that on our analyzed datasets it scales linearithmically with \(\mathcal{O}(E \log E)\)
-
-</p>
-</div>
-
-    
     <div class="col-xs-3 col-sm-3  d-md-none  d-lg-none"></div>
     <div class="col-xs-6 col-sm-10 col-md-4 col-lg-4">
-            <div class="w3-content w3-display-container">
-                <p><b>Figure 1: </b>Interactive Mutex Watershed Example. Use the arrows to follow the MWS iterations. Edges are activated (solid lines) in order of absolute weight. </p>
+        <div class="w3-content w3-display-container">
+            <p><b>Figure 1: </b>Interactive Mutex Watershed Example. Use the arrows to follow the MWS iterations. Edges are activated (solid lines) in order of absolute weight. </p>
+            <center>
+                <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+            </center>
+            <div class="w3-display-container mySlides" style="display: none">
                 <center>
-                    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-                    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+                    <img src="./static/img/iter1.png" width=100%;>
+                    <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                        First iteration: Start with the edge with larges absolute weight (\(w_e=20\)). It is an attractive edge, therefore merge both nodes.
+                    </div>
                 </center>
-                <div class="w3-display-container mySlides" style="display: none">
-                    <center>
-                        <img src="./static/img/iter1.png" width=100%;>
-                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            First iteration: Start with the edge with larges absolute weight (\(w_e=20\)). It is an attractive edge, therefore merge both nodes.
-                        </div>
-                    </center>
-                </div>
-                <div class="w3-display-container mySlides" style="display: none">
-                    <center>
-                        <img src="./static/img/iter2.png" width=100%;>
-                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            Second iteration: The next edge with second larges absolute weight (\(w_e=-19\)) is repulsive. Therefore, add a mutual exclusion constraint between the incident nodes.
-                        </div>
-                    </center>
-                </div>
-                <div class="w3-display-container mySlides" style="display: none">
-                    <center>
-                        <img src="./static/img/iter4.png" width=100%;>
-                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            Noter that when repulsive edge \(w_e = −13\) is considered no mutex is not added, because its incident vertices are already connected.
-                        </div>
-                    </center>
-                </div>
-                <div class="w3-display-container mySlides" style="display: none">
-                    <center>
-                        <img src="./static/img/iter5.png" width=100%;>
-                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            The attractive edge \(w_e = 12\) is overruled by a previously introduced mutual exclusion relation
-                        </div>
-                    </center>
-                </div>
-                <div class="w3-display-container mySlides">
-                    <center>
-                        <img src="./static/img/iter6.png" width=100%;>
-                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-                            
-                        </div>
-                    </center>
-                </div>
             </div>
-            <script>
-                var slideIndex = 1;
-                  showDivs(slideIndex);
-                  
-                  function plusDivs(n) {
-                    showDivs(slideIndex += n);
-                  }
-                  
-                  function showDivs(n) {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    if (n > x.length) {slideIndex = 1}
-                    if (n < 1) {slideIndex = x.length}
-                    for (i = 0; i < x.length; i++) {
-                       x[i].style.display = "none";  
-                    }
-                    x[slideIndex-1].style.display = "block";  
-                  }
-            </script>
-</div>   
-</div>   
-</div>
-    <br>
-    
-    <br>
-<h2 id="isbiresults">Results on Neuron Segmentation Challenges</h2>
-<div class="container-fluid">
-  <div class="row">
+            <div class="w3-display-container mySlides" style="display: none">
+                <center>
+                    <img src="./static/img/iter2.png" width=100%;>
+                    <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                        Second iteration: The next edge with second larges absolute weight (\(w_e=-19\)) is repulsive. Therefore, add a mutual exclusion constraint between the incident nodes.
+                    </div>
+                </center>
+            </div>
+            <div class="w3-display-container mySlides" style="display: none">
+                <center>
+                    <img src="./static/img/iter4.png" width=100%;>
+                    <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                        Noter that when repulsive edge \(w_e = −13\) is considered no mutex is not added, because its incident vertices are already connected.
+                    </div>
+                </center>
+            </div>
+            <div class="w3-display-container mySlides" style="display: none">
+                <center>
+                    <img src="./static/img/iter5.png" width=100%;>
+                    <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                        The attractive edge \(w_e = 12\) is overruled by a previously introduced mutual exclusion relation
+                    </div>
+                </center>
+            </div>
+            <div class="w3-display-container mySlides">
+                <center>
+                    <img src="./static/img/iter6.png" width=100%;>
+                    <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
 
- <div class="col-lg-8 col-sm-12">
-<p>We evaluate the Mutex Watershed on the challenging task of 
-neuron segmentation in electron microscopy (EM) image volumes.
-This application is of key interest in connectomics, a field of 
-neuro-science that strives to reconstruct neural wiring digrams spanning complete central nervous systems. The task requires segmentation of neurons from electron microscopy images of neural tissue -- a challenging endeavor, since segmentation has to be based only on boundary information (cell membranes) and some of the boundaries are not very pronounced. Besides, cells contain membrane-bound organelles, which have to be suppressed in the segmentation. Some of the neuron protrusions are very thin, but all of those need to be preserved in the segmentation to arrive at the correct connectivity graph.</p>
-<p>
-We estimate the affinities / edge for a graph with fixed neighborhood structure using a 3D-Unet (see Fig. 6 in our paper). This fixed neighborhood consists of a combination of local attractive and long-range repulsive edges.
-</p>
-<p>Our method holds the top entry in the <a href="http://brainiac2.mit.edu/isbi_challenge/leaders-board-new">ISBI challenge leader board</a> at the time of submission. This is especially remarkable insofar as it is simpler than the methods holding the other top entries (more details in section 5.2). </p>
-<p>
-<b>Update:</b> Since these results were published, our method has become a part of two state-of-the-art segmentation pipelines by Hirsch, Mais, and Kainmueller [1] and Lee et al. [2]. 
-</p>
-
-<p><small>
-[1] <a href="https://arxiv.org/pdf/2001.07626">Hirsch, Peter, Lisa Mais, and Dagmar Kainmueller. "PatchPerPix for Instance Segmentation." (2020)</a>
-<br>
-[2] <a href="https://arxiv.org/pdf/1909.09872">Lee, Kisuk, Ran Lu, Kyle Luther, and H. Sebastian Seung. "Learning Dense Voxel Embeddings for 3D Neuron Reconstruction." (2019)</a>
-</small></p>
-
-</div>
-
-    <div class="col-lg-3 col-sm-6 col-xs-6">
-        <div class="slidecontainer">
-            <p><b>Figure 2: </b>Mutex Watershed Results on ISBI</p>
-            <img id="isbi_result_img" src="static/img/isbi/mix_20_16.png" width=90%;>
-                    Z-Position in Image Volume<span id="z_val"></span><br>
-                    <input type="range" min="1" max="29" value="15" class="slider" id="z_slice_slider" width=25%;>
-                    <br>
-                    Mutex Watershed Segmentation <span id="mix"></span><br>
-                    <input type="range" min="1" max="7" value="5" class="slider" id="mix_slider" width=25%;>
+                    </div>
+                </center>
+            </div>
         </div>
-        <div class="col-lg-1 col-sm-3"></div>
         <script>
-            var z_slice_slider = document.getElementById("z_slice_slider");
-               var mix_slider = document.getElementById("mix_slider");
-               var z_slice = z_slice_slider.value;
-               var mix = mix_slider.value;
-               showResult(z_slice, mix)
-               
-               
-               z_slice_slider.oninput = function() {
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = x.length}
+                        for (i = 0; i < x.length; i++) {
+                           x[i].style.display = "none";  
+                       }
+                       x[slideIndex-1].style.display = "block";  
+                   }
+               </script>
+               <br>
+               <hr>
+               <br>
+               <p><b>Figure 2: </b>Mutex Watershed Results on ISBI</p>
+               <img id="isbi_result_img" src="static/img/isbi/mix_20_16.png" width=90%;>
+               Z-Position in Image Volume<span id="z_val"></span><br>
+               <input type="range" min="1" max="29" value="15" class="slider" id="z_slice_slider" width=25%;>
+               <br>
+               Mutex Watershed Segmentation <span id="mix"></span><br>
+               <input type="range" min="1" max="7" value="5" class="slider" id="mix_slider" width=25%;>
+
+               <script>
+                var z_slice_slider = document.getElementById("z_slice_slider");
+                var mix_slider = document.getElementById("mix_slider");
+                var z_slice = z_slice_slider.value;
+                var mix = mix_slider.value;
+                showResult(z_slice, mix)
+
+
+                z_slice_slider.oninput = function() {
                    z_slice = this.value;
                    showResult(z_slice, mix)
                } 
-               
+
                mix_slider.oninput = function() {
                    mix = this.value;
                    showResult(z_slice, mix)
                } 
-               
-               
-               
+
+
+
                function showResult(z_slice, mix) {
-               
+
                    // preload image
                    var isbi_url = `static/img/isbi/mix_${mix}0_${z_slice}.png`
-                     if (z_slice < 10) {
+                   if (z_slice < 10) {
                        isbi_url = `static/img/isbi/mix_${mix}0_0${z_slice}.png`
-                     }
-               
+                   }
+
                    var preload=new Image();
                    preload.src=isbi_url;
                    document.getElementById("isbi_result_img").src=isbi_url;
-               
+
                }
+           </script>
+           <br>
+           <hr>
+           <br>
+           <p><b>Figure 3: </b>Nuclei segmentation with MWS in an EM volume of Platynereis dumerilii [3]. Zoom in for details.</p>
+           <img class='zoom' src='static/img/plati/PlatyBrowser_rot.jpg' alt='Platynereis dumerilii' width=100%;/>
+           <script src="wheelzoom-master/wheelzoom.js"></script>
+           <script>
+            wheelzoom(document.querySelector('img.zoom'));
         </script>
+    </div>
+
+    <div class="col-lg-1 col-sm-3"></div>
 
 </div>
 </div>
-</div>
-
 
 <br>
 <div class="container">
-        <h2 id="paper">Paper</h2>
-        <center>
+    <h2 id="paper">Paper</h2>
+    <center>
         <a href="https://arxiv.org/pdf/1904.12654.pdf"><img class="paper" width=80%; src="http://www.arxiv-sanity.com/static/thumbs/1904.12654v1.pdf.jpg" /></a>
         <br>
-            <h3 class="text-center">The Mutex Watershed and its Objective:<br>
-               Efficient, Parameter-Free Image Partitioning</h3>
-            <p>Steffen Wolf*, Alberto Bailoni*, Constantin Pape, Nasim Rahaman,<br> Anna Kreshuk, Ullrich Köthe, Fred A. Hamprecht<br> In TPAMI, 2020</p>
-        </center>
+        <h3 class="text-center">The Mutex Watershed and its Objective:<br>
+        Efficient, Parameter-Free Image Partitioning</h3>
+        <p>Steffen Wolf*, Alberto Bailoni*, Constantin Pape, Nasim Rahaman,<br> Anna Kreshuk, Ullrich Köthe, Fred A. Hamprecht<br> In TPAMI, 2020</p>
+    </center>
 
-  <div class="row">
+    <div class="row">
      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
      </div>
  </div>
 
-        <table align=center width=400px>
-            <tr>
-                <td>
-                    <span style="font-size:14pt">
-                     <center>
-                        <a href="https://arxiv.org/pdf/1904.12654.pdf">[Paper]</a>
-                     </center>
-                  </td>
-                  <td>
-                     <span style="font-size:14pt">
-                     <center>
-                        <a href="./static/bibtex_mutex_pami.txt">[Bibtex]</a>
-                     </center>
-                  </td>
-                  <td>
-                     <span style="font-size:14pt">
-                     <center>
-                        <a href="https://github.com/constantinpape/affogato">[Code]</a>
-                     </center>
-                  </td>
-                  <td>
-                     <span style="font-size:14pt">
-                     <center>
-                        <a href="https://github.com/constantinpape/affogato/blob/master/example/MutexWatershed.ipynb">[Tutorial]</a>
-                     </center>
-                  </td>
-               </tr>
-            </table>
-            <br><br>
-            <center>
-               <h3 class="text-center">The Mutex Watershed:<br> Efficient, Parameter-Free Image Partitioning</h3>
-               <p>Steffen Wolf*, Constantin Pape*, Alberto Bailoni, Nasim Rahaman,<br> Anna Kreshuk, Ullrich Köthe, Fred A. Hamprecht<br>
-               In ECCV, 2018</p>
+ <table align=center width=400px>
+    <tr>
+        <td>
+            <span style="font-size:14pt">
+             <center>
+                <a href="https://arxiv.org/pdf/1904.12654.pdf">[Paper]</a>
             </center>
-            <table align=center width=600px>
-               <tr>
-                  <td>
-                     <span style="font-size:14pt">
-                     <center>
-                        <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Steffen_Wolf_The_Mutex_Watershed_ECCV_2018_paper.pdf">[Paper]</a>
-                     </center>
-                  </td>
-                  <td>
-                     <span style="font-size:14pt">
-                     <center>
-                        <a href="./static/bibtex_mutex_eccv.txt">[Bibtex]</a>
-                     </center>
-                  </td>
-                  <td>
-                     <span style="font-size:14pt">
-                     <center>
-                        <a href="https://github.com/hci-unihd/mutex-watershed">[Code]</a>
-                     </center>
-                  </td>
-               </tr>
-            </table>
-         <br><br><br><br><br><br><br><br><br><br>
-         </div>
-         </td>
-    </main>
+            </span>
+        </td>
+        <td>
+         <span style="font-size:14pt">
+             <center>
+                <a href="./static/bibtex_mutex_pami.txt">[Bibtex]</a>
+            </center>
+            </span>
+        </td>
+        <td>
+         <span style="font-size:14pt">
+             <center>
+                <a href="https://github.com/constantinpape/affogato">[Code]</a>
+            </center>
+            </span>
+        </td>
+        <td>
+         <span style="font-size:14pt">
+             <center>
+                <a href="https://github.com/constantinpape/affogato/blob/master/example/MutexWatershed.ipynb">[Tutorial]</a>
+            </center>
+            </span>
+        </td>
+    </tr>
+</table>
+<br><br>
+<center>
+   <h3 class="text-center">The Mutex Watershed:<br> Efficient, Parameter-Free Image Partitioning</h3>
+   <p>Steffen Wolf*, Constantin Pape*, Alberto Bailoni, Nasim Rahaman,<br> Anna Kreshuk, Ullrich Köthe, Fred A. Hamprecht<br>
+   In ECCV, 2018</p>
+</center>
+<table align=center width=600px>
+   <tr>
+      <td>
+         <span style="font-size:14pt">
+             <center>
+                <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Steffen_Wolf_The_Mutex_Watershed_ECCV_2018_paper.pdf">[Paper]</a>
+            </center>
+        </span>
+        </td>
+        <td>
+         <span style="font-size:14pt">
+             <center>
+                <a href="./static/bibtex_mutex_eccv.txt">[Bibtex]</a>
+            </center>
+        </span>
+        </td>
+        <td>
+         <span style="font-size:14pt">
+             <center>
+                <a href="https://github.com/hci-unihd/mutex-watershed">[Code]</a>
+            </center>
+        </span>
+        </td>
+    </tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+</div>
 
-      </body>
-   </html>
+</main>
+
+</body>
+</html>
